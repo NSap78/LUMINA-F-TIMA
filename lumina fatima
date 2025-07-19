@@ -1,0 +1,41 @@
+index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Fátima - Cadastre-se</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(to bottom, #FF8C00, #FFB347); color: white; text-align: center; padding: 30px; }
+    .container { max-width: 500px; margin: auto; background: #ffffff10; padding: 30px; border-radius: 15px; }
+    h1 { font-size: 1.75rem; margin-bottom: .5rem; }
+    p { font-size: 1rem; margin-bottom: 1.5rem; }
+    input { width: 100%; padding: .75rem; margin: .5rem 0; border: none; border-radius: 10px; font-size: 1rem; }
+    .btn-whatsapp { background-color: #25D366; color: white; border: none; padding: 1rem; border-radius: 10px; font-size: 1rem; cursor: pointer; width: 100%; text-decoration: none; display: block; }
+    @media (max-width: 480px) {
+      body { padding: 15px; }
+      .container { padding: 20px; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conheça o Lumina Fátima</h1>
+    <p>A 5min do Centro, com lazer completo, varanda gourmet e entrada em até 48x com FGTS.</p>
+    <input type="text" id="nome" placeholder="Seu nome">
+    <input type="tel" id="telefone" placeholder="Seu WhatsApp">
+    <a id="botaoWhats" class="btn-whatsapp" href="#" target="_blank">Falar com um especialista</a>
+  </div>
+  <script>
+    const botao = document.getElementById("botaoWhats");
+    botao.addEventListener("click", function() {
+      const nome = document.getElementById("nome").value;
+      const telefone = document.getElementById("telefone").value;
+      const mensagem = `Olá! Meu nome é ${nome}, meu número é ${telefone} e quero saber mais sobre o Lumina Fátima. Quero agendar uma visita.`;
+      const url = `https://wa.me/5585992470984?text=${encodeURIComponent(mensagem)}`;
+      botao.href = url;
+    });
+  </script>
+</body>
+</html>
